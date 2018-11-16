@@ -53,4 +53,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-aop')
 	// 邮件
 	compile('org.springframework.boot:spring-boot-starter-mail')
+	// excel 导入导出
+	compile('com.alibaba:easyexcel:1.0.1')
 }
