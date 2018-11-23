@@ -55,4 +55,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-mail')
 	// excel 导入导出
 	compile('com.alibaba:easyexcel:1.0.1')
+	// 应用监控
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.hateoas:spring-hateoas')
+	
 }

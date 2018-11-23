@@ -5,9 +5,8 @@ import com.alibaba.excel.metadata.BaseRowModel;
 import lombok.Data;
 
 /**
- * @Auther: user
- * @Date: 2018/11/16
- * @Description:
+ * @author:wangyanbo
+ * @Data: 2018/11/16
  */
 @Data
 public class ExcelPropertyIndexModel extends BaseRowModel {

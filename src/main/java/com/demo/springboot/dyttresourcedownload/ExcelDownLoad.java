@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Auther: user
+ * @author: user
  * @Date: 2018/11/16
  * @Description: 结果保存在Excel
  */
@@ -26,6 +26,9 @@ public class ExcelDownLoad {
             sheet1.setSheetName(orgin);
             List<ExcelPropertyIndexModel> data = new ArrayList<>();
             for(List<String> list : lists){
+                if(list.size() == 2){
+                    System.out.println("hahha");
+                }
                 ExcelPropertyIndexModel item = new ExcelPropertyIndexModel();
                 item.setName(list.get(0));
                 item.setImdb(list.get(1));
@@ -44,5 +47,12 @@ public class ExcelDownLoad {
 
     public static void main(String[] args) throws Exception {
         //writeWithHead("test", null);
+        int i = 100;
+        for(int j = 0; j < i; j++){
+            if(j%5 == 0){
+                System.out.println(j);
+            }
+
+        }
     }
 }

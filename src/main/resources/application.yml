@@ -28,7 +28,9 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
-  devtools:
+    #favicon:
+      #enabled: false # 是否使用springboot 原生的网站图标（就是那个叶子的图标）
+  devtools: # 热启动
     restart:
       enabled: true
       additional-paths: src/main/java
@@ -37,9 +39,14 @@ spring:
     port: 587 # 发送端口号
     username: 2725134584@qq.com # 发送账号
     password: sbvyiyyoakihdgjb # 授权码
+#    username: 1215765064@qq.com # 发送账号
+#    password: mykhueqfuiyjhdjf # 授权码
     protocol: smtp
     properties:
       mail:
         smtp:
          auth: true # 开启身份验证 这个不能缺失，缺失的话，项目启动不了
-
+  data:
+    rest:
+      base-path: /api # 定制根路径
+debug: false # 日志是debug 模式

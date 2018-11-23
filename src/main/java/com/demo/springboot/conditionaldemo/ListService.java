@@ -1,11 +1,15 @@
 package com.demo.springboot.conditionaldemo;
 
 /**
- * @Auther: user
+ * @author: user
  * @Date: 2018/11/7
  * @Description:
  */
 public interface ListService {
-    public String showListcmd();
+    /**
+     * 展示cmd列表
+     * @return
+     */
+    String showListcmd();
 
 }

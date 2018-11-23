@@ -41,7 +41,8 @@ public class LogAspect {
      */
     @Around("pointcut()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        long beginTime = System.currentTimeMillis();//1、开始时间
+        //1、开始时间
+        long beginTime = System.currentTimeMillis();
         //利用RequestContextHolder获取requst对象
         ServletRequestAttributes requestAttr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         String uri = requestAttr.getRequest().getRequestURI();

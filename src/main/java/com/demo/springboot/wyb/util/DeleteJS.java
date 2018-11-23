@@ -3,6 +3,10 @@ package com.demo.springboot.wyb.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author: user
+ * @date: 2018/01/01
+ */
 public class DeleteJS {
 	private static final String regEx_script = "<script[^>]*?>[\\s\\S]*?<\\/script>";
 	private static final String regEx_style = "<style[^>]*?>[\\s\\S]*?<\\/style>";
@@ -15,7 +19,6 @@ public class DeleteJS {
 	 * @return 鍒犻櫎Html鏍囩
 	 */
 	private static String delHTMLTag(String htmlStr) {
-		// System.out.println(htmlStr);
 		Pattern p_script = Pattern.compile(regEx_script, Pattern.CASE_INSENSITIVE);
 		Matcher m_script = p_script.matcher(htmlStr);
 		htmlStr = m_script.replaceAll("");
@@ -45,8 +48,6 @@ public class DeleteJS {
 		}
 		htmlStr = delHTMLTag(htmlStr);
 		htmlStr = htmlStr.replaceAll("&nbsp;", "");
-		// System.out.println(htmlStr);
-		// htmlStr = htmlStr.substring(0, htmlStr.indexOf("銆�)+1);
 		return htmlStr;
 	}
 

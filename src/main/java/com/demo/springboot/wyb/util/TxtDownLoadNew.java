@@ -13,21 +13,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * @author user
+ */
 public class TxtDownLoadNew {
     public static void main(String[] args) throws IOException {
-        String baseUrl = "https://www.i7wx.com/book/31/31679/";
+        String baseUrl = "https://www.i7wx.com/book/2/2795/";
         Map<String,String> headers = getBrowerInit();
         Document document = Jsoup.connect(baseUrl).headers(headers).get();
         Elements chapters = document.getElementById("readerlist").getElementsByTag("li");
         int count = 0;
-        List<Integer> chapterList = new ArrayList<Integer>();
-        Map<Integer, String> titleMap = new HashMap<Integer, String>();
-        Map<Integer, String> contentMap = new HashMap<Integer, String>();
+        List<Integer> chapterList = new ArrayList<>();
+        Map<Integer, String> titleMap = new HashMap<>();
+        Map<Integer, String> contentMap = new HashMap<>();
         for(Element element : chapters){
             count ++;
             System.out.println(" 第"+count+ "次循环");
-            if(count < 2){
+            if(count < 3){
                 continue;
             }
             Element chapterA = element.getElementsByTag("a").get(0);
@@ -38,7 +40,7 @@ public class TxtDownLoadNew {
             titleMap.put(count, title);
             contentMap.put(count, content);
         }
-        String fileName = "e:/jf.txt";
+        String fileName = "e:/fpxt.txt";
         FileWriter fw = new FileWriter(fileName, true);
         for (int i :chapterList){
             fw.write("\n");
@@ -55,7 +57,7 @@ public class TxtDownLoadNew {
      * @return
      */
     public static Map<String, String>getBrowerInit(){
-        Map<String,String> headers = new HashMap<String,String>();
+        Map<String,String> headers = new HashMap<String, String>();
         headers.put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
         headers.put("Accept-Encoding", "gzip, deflate, br");
         headers.put("Accept-Language", "zh-CN,zh;q=0.9");
