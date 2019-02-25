@@ -33,17 +33,12 @@ public class HelloWeChat extends WeChatBot {
 //    }
 
     public static void main(String[] args) {
-        new HelloWeChat(Config.me().autoLogin(true).showTerminal(true)).start();
-    }
-
-    // 发送天气信息
-    public void sendWeather() {
-
+        new HelloWeChat(Config.me().autoLogin(false).showTerminal(true)).start();
     }
 
     public void other(){
         while(true){
-            //System.out.println(LocalDateTime.now().toString());
+            System.out.println(LocalDateTime.now().toString());
             if(LocalDateTime.now().toString().substring(11,16).equals("05:00") && !Holidaytime.isHoliday()){
                 String msg = WeatherSent.sendContent("101010200", "海淀");
                 this.sendMsgByName("王贺飞", msg);
@@ -53,6 +48,11 @@ public class HelloWeChat extends WeChatBot {
                 String msg = WeatherSent.sendContent("101010200", "海淀");
                 this.sendMsgByName("王贺飞", msg);
                 DateUtils.sleep(60000);
+            }
+            if(LocalDateTime.now().toString().substring(11,16).equals("09:53")){
+                String msg = WeatherSent.sendContent("101010200", "海淀");
+                this.sendMsgByName("王贺飞", msg);
+                DateUtils.sleep(600000);
             }
         }
     }

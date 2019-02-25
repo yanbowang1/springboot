@@ -15,6 +15,15 @@ public class WeatherSent {
         for(String s : list){
             sb.append(s+ "\n");
         }
-        return  sb.toString();
+        return  sb.toString().substring(
+                0,sb.indexOf("时") -2)+ sb.toString().substring(
+                sb.indexOf("时")+ 1,
+                sb.length());
     }
+
+    public static void main(String[] args) {
+        String s = sendContent("101010200", "海淀");
+        System.out.println(s);
+    }
+
 }

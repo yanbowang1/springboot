@@ -75,8 +75,7 @@ public class Holidaytime {
         }
 
         // 判断周末
-        if("Saturday".toUpperCase().equals(date) ||
-                "Sunday".toUpperCase().equals(date)){
+        if("Sunday".toUpperCase().equals(date)){
             return true;
         }
         return false;

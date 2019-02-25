@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class TxtDownLoadNew {
     public static void main(String[] args) throws IOException {
-        String baseUrl = "https://www.i7wx.com/book/2/2795/";
+        String baseUrl = "https://www.i7wx.com/book/32/32752/";
         Map<String,String> headers = getBrowerInit();
         Document document = Jsoup.connect(baseUrl).headers(headers).get();
         Elements chapters = document.getElementById("readerlist").getElementsByTag("li");
@@ -29,7 +29,7 @@ public class TxtDownLoadNew {
         for(Element element : chapters){
             count ++;
             System.out.println(" 第"+count+ "次循环");
-            if(count < 3){
+            if(count < 70){
                 continue;
             }
             Element chapterA = element.getElementsByTag("a").get(0);
@@ -40,7 +40,7 @@ public class TxtDownLoadNew {
             titleMap.put(count, title);
             contentMap.put(count, content);
         }
-        String fileName = "e:/fpxt.txt";
+        String fileName = "e:/xb.txt";
         FileWriter fw = new FileWriter(fileName, true);
         for (int i :chapterList){
             fw.write("\n");
