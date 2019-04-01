@@ -59,8 +59,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.hateoas:spring-hateoas')
 	// https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-client
-	compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-client', version: '6.2.2'
-	compile group: 'io.github.biezhi',name:'wechat-api',version:'1.0.6'
-	compile group: 'org.apache.httpcomponents',name:'httpclient',version:'4.5.5'
-	compile group: 'com.fasterxml.jackson.core',name:'jackson-databind',version:'2.9.5'
+	//compile('org.elasticsearch.client:elasticsearch-rest-client:6.2.2')
+	//compile group:'org.elasticsearch.client', name: 'elasticsearch-rest-client', version: '6.2.2'
+	compile group:'io.github.biezhi',name:'wechat-api',version:'1.0.6'
+	// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+	//compile group:'com.fasterxml.jackson.core',name:'jackson-databind',version:'2.9.5'
 }
